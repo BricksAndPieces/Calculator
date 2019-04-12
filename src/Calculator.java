@@ -5,7 +5,7 @@ public class Calculator {
     private static final String MULTIPLY = "*";
     private static final String DIVIDE = "/";
     private static final String POWER = "^";
-//
+
     public double calculate(final String equation) {
         return parse(equation.replaceAll(" ", ""));
     }

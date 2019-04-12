@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Example {
-//
+
     public static void main(String[] args) {
         System.out.println("Calculator using Strings in Java by BricksAndPieces");
 
