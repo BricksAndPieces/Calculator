@@ -1,15 +1,11 @@
 # Calculator  
 A simple calculator made in Java thats parses a String input and returns a double.
 
-Created by BricksAndPieces
-
-
+Created by BricksAndPieces<br/><br/>
 **Features**  
 - Fully text based, no need for a UI
 - Supports power, parentheses, and order of operations
-- Based around one method that will repeatedly call itself to fully parse the equation
-
-
+- Based around one method that will repeatedly call itself to fully parse the equation<br/><br/>
 **How it works**  
 This calculator follows all math rules such as the Order of Operations (PEMDAS).
 
@@ -67,8 +63,6 @@ if(s.contains(ADD)) {
 
 That is all that is needed to successfully parse the String. All that is left to do is return the double if there are no operators left and if its a valid equation. This can be done easily with `Double.parseDouble(s);`.
 
-This is just how the calculator works in concept. Feel free to clone this project locally to try it out yourself! More information on how the code works along with the entire `Calculator` class can be found (here)[https://github.com/BricksAndPieces/Calculator/blob/master/src/Calculator.java].
-  
-  
+This is just how the calculator works in concept. Feel free to clone this project locally to try it out yourself! More information on how the code works along with the entire `Calculator` class can be found (here)[https://github.com/BricksAndPieces/Calculator/blob/master/src/Calculator.java].<br/><br/>
 **Issues**  
 Find any issues? Feel free to suggest a change and/or report a bug!
