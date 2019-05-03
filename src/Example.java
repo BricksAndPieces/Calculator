@@ -3,9 +3,7 @@ import java.util.Scanner;
 public class Example {
 
     public static void main(String[] args) {
-        System.out.println("Calculator using Strings created in Java by BricksAndPieces");
-
-        final Calculator calc = new Calculator();
+        System.out.println("Calculator created in Java by BricksAndPieces");
         final Scanner in = new Scanner(System.in);
 
         boolean again;
@@ -13,7 +11,7 @@ public class Example {
             System.out.println("\nEquation:");
 
             String solution;
-            try { solution = calc.calculate(in.nextLine())+""; }
+            try { solution = Calculator.solve(in.nextLine()) + ""; }
             catch(final IllegalArgumentException e) { // Invalid input
                 solution = e.getMessage();
             }

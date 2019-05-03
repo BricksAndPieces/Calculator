@@ -1,41 +1,39 @@
 public class Calculator {
 
-    private static final String ADD = "+";
-    private static final String SUBTRACT = "-";
-    private static final String MULTIPLY = "*";
-    private static final String DIVIDE = "/";
-    private static final String POWER = "^";
+    public Calculator() throws Exception {
+        throw new Exception("Silly rabbit, you don't need an instance of this class!");
+    }
 
-    public double calculate(final String equation) {
+    public static double solve(final String equation) {
         return parse(equation.replaceAll("//s+", ""));
     }
 
-    private double parse(final String s) {
+    private static double parse(final String s) {
         final int end = s.indexOf(")");
         if(end != -1) {
             final int start = s.substring(0, end).lastIndexOf("(");
             if(start == -1)
-                throw new IllegalArgumentException("Parentheses do not match");
+                throw new IllegalArgumentException("Invalid input");
 
             return parse(s.substring(0, start) + parse(s.substring(start+1, end)) + s.substring(end+1));
         }
 
         try { return Double.parseDouble(s); }
         catch(final NumberFormatException e) {
-            if(s.contains(ADD)) {
-                final int index = s.indexOf(ADD);
+            if(s.contains(Operator.ADD)) {
+                final int index = s.indexOf(Operator.ADD);
                 return parse(s.substring(0, index)) + parse(s.substring(index+1));
-            }else if(s.contains(SUBTRACT)) {
-                final int index = s.indexOf(SUBTRACT);
+            }else if(s.contains(Operator.SUBTRACT)) {
+                final int index = s.indexOf(Operator.SUBTRACT);
                 return parse(s.substring(0, index)) - parse(s.substring(index+1));
-            }else if(s.contains(MULTIPLY)) {
-                final int index = s.indexOf(MULTIPLY);
+            }else if(s.contains(Operator.MULTIPLY)) {
+                final int index = s.indexOf(Operator.MULTIPLY);
                 return parse(s.substring(0, index)) * parse(s.substring(index+1));
-            }else if(s.contains(DIVIDE)) {
-                final int index = s.indexOf(DIVIDE);
+            }else if(s.contains(Operator.DIVIDE)) {
+                final int index = s.indexOf(Operator.DIVIDE);
                 return parse(s.substring(0, index)) / parse(s.substring(index+1));
-            }else if(s.contains(POWER)) {
-                final int index = s.indexOf(POWER);
+            }else if(s.contains(Operator.POWER)) {
+                final int index = s.indexOf(Operator.POWER);
                 return Math.pow(parse(s.substring(0, index)), parse(s.substring(index+1)));
             }
         }
