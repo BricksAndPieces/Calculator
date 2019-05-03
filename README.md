@@ -36,7 +36,7 @@ if(start == -1)
 return parse(s.substring(0, start) + parse(s.substring(start+1, end)) + s.substring(end+1));
 ```
 
-`Please note that this is within a method called parse() with a String parameter "s" that represents the equation`
+`Please note that "s" is the String representation of the equation`
 
 We then need to parse the actual equation after all the parentheses are taken care of. This is relatively simple and just means we need to look for the operator signs (+, - , \*, /, ^) and parse accordingly. We go backwards in PEMDAS because we start at the outside and work our way in. That way, when we finally reach the end of the recursion, we start with the power, the the division, and so on.
 
@@ -59,7 +59,7 @@ if(s.contains(ADD)) {
 }
 ```
 
-`Please note that this is within a method called parse() with a String parameter "s" that represents the equation`
+`Please note that "s" is the String representation of the equation`
 
 That is all that is needed to successfully parse the String. All that is left to do is return the double if there are no operators left and if its a valid equation. This can be done easily with `Double.parseDouble(s);`.
 
