@@ -6,6 +6,7 @@ Created by BricksAndPieces<br/><br/>
 - Fully text based, no need for a UI
 - Supports power, parentheses, and order of operations
 - Based around one method that will repeatedly call itself to fully parse the equation<br/><br/>
+
 **How it works**  
 This calculator follows all math rules such as the Order of Operations (PEMDAS).
 
