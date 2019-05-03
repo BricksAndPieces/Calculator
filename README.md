@@ -1,16 +1,16 @@
-# Calculator
+# Calculator  
 A simple calculator made in Java thats parses a String input and returns a double.
 
 Created by BricksAndPieces
 
 
-**Features**
+**Features**  
 - Fully text based, no need for a UI
 - Supports power, parentheses, and order of operations
 - Based around one method that will repeatedly call itself to fully parse the equation
 
 
-**How it works**
+**How it works**  
 This calculator follows all math rules such as the Order of Operations (PEMDAS).
 
 `P` - Parentheses
@@ -26,7 +26,7 @@ This calculator follows all math rules such as the Order of Operations (PEMDAS).
 `S` - Subtraction
 
 Along with this idea, the calculator also supports power, roots (soon), and some other smaller features.
-
+  
 
 The calculator is heavily built around the idea of recursion. It is used to parse the equation that is inputted as a String into a double output. The first step in parsing the String is to look for any parentheses and format according to them. In this case, we are just parsing items withing the parentheses first before moving on with the rest of the equation.
 
@@ -68,6 +68,7 @@ if(s.contains(ADD)) {
 That is all that is needed to successfully parse the String. All that is left to do is return the double if there are no operators left and if its a valid equation. This can be done easily with `Double.parseDouble(s);`.
 
 This is just how the calculator works in concept. Feel free to clone this project locally to try it out yourself! More information on how the code works along with the entire `Calculator` class can be found (here)[https://github.com/BricksAndPieces/Calculator/blob/master/src/Calculator.java].
-
-**Issues**
+  
+  
+**Issues**  
 Find any issues? Feel free to suggest a change and/or report a bug!
