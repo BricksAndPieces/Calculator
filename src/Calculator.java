@@ -1,8 +1,6 @@
 public class Calculator {
 
-    public Calculator() throws Exception {
-        throw new Exception("Silly rabbit, you don't need an instance of this class!");
-    }
+    private Calculator() { }
 
     public static double solve(final String equation) {
         return parse(equation.replaceAll("//s+", ""));
@@ -16,6 +14,15 @@ public class Calculator {
                 throw new IllegalArgumentException("Invalid input");
 
             return parse(s.substring(0, start) + parse(s.substring(start+1, end)) + s.substring(end+1));
+        }
+
+        final int absolute = s.lastIndexOf("|");
+        if(absolute != -1) {
+            final int start = s.indexOf("|");
+            if(start == absolute)
+                throw new IllegalArgumentException("Invalid input");
+
+            return parse(s.substring(0, start) + Math.abs(parse(s.substring(start+1, absolute))) + s.substring(absolute+1));
         }
 
         try { return Double.parseDouble(s); }
